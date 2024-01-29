@@ -62,12 +62,20 @@ def splited_indices(X, y, num_splits=5, test_size=0.2):
         splits_indices.append((train_idx, val_idx))
     return splits_indices
 
-def divisors(number):
+def timestep(number):
     '''
-    select timestamp
+    select timestamp for the dataset
     '''
     common_divisors = []
     for i in range(1, number + 1):
         if number % i == 0:  
             common_divisors.append(i)
-    return common_divisors
+    return next((x for x in reversed(common_divisors) if x < 20))
+
+def sliding_window(dataset, window_size):
+    expanded_dataset = []
+    for i in range(len(dataset) - window_size + 1):
+        window = dataset[i:i + window_size]
+        for j in range(len(window)):
+            expanded_dataset.append(window[j])
+    return np.array(expanded_dataset)
