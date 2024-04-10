@@ -1,39 +1,39 @@
-# REJECTED
+# This assignment was for the Wolt Data Science internship, which was REJECTED with baseless reasoning.
 
-### Pre-processing before doing train-test split. For example scaling the whole data set and only then doing the train-test split.
+### Reason 1: Pre-processing before doing the train-test split. For example, scaling the whole dataset and only then doing the train-test split.
 
-**Response:** I don't see any issue of data leakage here, as I have binned the data instead of standardizing it on a scale. The provided data was within a determined range even for the unseen data.
+**Response:** I fail to see any issue of data leakage here, as I have binned the data instead of standardizing it on a scale. The provided data remained within a determined range even for unseen data.
 
-### Not dealing with the time series aspects of time series. You cannot do a random split to test and train sets with a time series if you intend to predict the future.
+### Reason 2: Not addressing the time series aspects of the data. You cannot conduct a random split for testing and training sets with time series data if the aim is to predict the future.
 
-**Response:** Yes, the data is in time series. However, the reviewer failed to recognize that:
-1. The events are random, so it is likely that there is no relation between t_1 and t_2.
-2. The relevant time information is encoded into features such as hour and weekday, making it potentially safe to randomly split now.
+**Response:** While the data is indeed in a time series format, the reviewer failed to recognize that:
+1. The events are random, suggesting there may be no relation between t_1 and t_2.
+2. Relevant time information is encoded into features such as hour and weekday, potentially making it safe to perform a random split now.
 
-### Can you get similar or comparable performance with linear regression?
+### Reason 3: Can you achieve similar or comparable performance with linear regression?
 
-**Response:** The reviewer should have checked the notebook where I have already evaluated the data on cross-correlation, and there is no indication of linear dependency. This suggests that a non-linear model should be tried instead of beating around the bush.
+**Response:** The reviewer should have consulted the notebook where I evaluated the data using cross-correlation, revealing no indication of linear dependency. This suggests that a non-linear model should be explored instead of dwelling on linear regression.
 
-### Selecting overly complex model and overfitting
+### Reason 4: Selecting an overly complex model and overfitting.
 
-**Response:** The applied model uses a simple 2-layer LSTM to capture non-linearity. I have no idea how it is complex to the reviewer. Overfitting is already mitigated with:
+**Response:** The applied model utilizes a simple 2-layer LSTM to capture non-linearity. I fail to comprehend how this could be perceived as overly complex by the reviewer. Overfitting is already mitigated through:
 1. LSTM dropout
-2. cross-validation.
+2. Cross-validation.
 
-### Doing a light exploratory data analysis and trusting the model to make sense of your data
+### Reason 5: Conducting light exploratory data analysis and relying solely on the model to interpret the data.
 
-**Response:** The reviewer should check the notebook again to see the exploration part. If n-fold cross-validation on a fully random split can't establish trust, then there is no limit to suspicion.
+**Response:** The reviewer should revisit the notebook to review the exploration part. If n-fold cross-validation on a fully random split fails to establish trust, then there seems to be no limit to suspicion.
 
-## Comments for the reviewer
+## Comments for the Reviewer:
 
-- Data science is not a religion; you should not have strict slot fillings. There are many nuances that the reviewer missed but was quick to give pre-conceived condescending remarks.
+- Data science should not be treated dogmatically; there are many nuances that the reviewer missed but was quick to dismiss with preconceived, condescending remarks.
 
 ---------------------------------------------------------------------------------------------------------------------
 
-# Instructions
+# Instructions:
 
-- Go to the sandbox and find the 'dp.ipynb' notebook to explore or reproduce results.
+- Navigate to the sandbox and locate the 'dp.ipynb' notebook for further exploration or to reproduce results.
 
-# Requirements
+# Requirements:
 
-- The requirements that may be installed are in the requirements.txt file in the root.
+- Install the necessary requirements outlined in the requirements.txt file located in the root directory.
